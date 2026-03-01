@@ -4,7 +4,6 @@ using KnowledgeTestCore.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Scalar.AspNetCore;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,8 +32,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = jwtSettings["Issuer"],
             ValidAudience = jwtSettings["Audience"],
+            
             IssuerSigningKey = new SymmetricSecurityKey(
                                            Encoding.UTF8.GetBytes(secretKey!))
+            
         };
     });
 
@@ -44,30 +45,17 @@ builder.Services.AddAuthorization();
 // ✅ 5. Controllers
 builder.Services.AddControllers();
 
-// ✅ 6. OpenAPI + Scalar (for .NET 10)
-builder.Services.AddOpenApi();
-
 var app = builder.Build();
 
-// ✅ 7. Scalar UI
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.MapScalarApiReference(options =>
-    {
-        options.Title = "Employee Management API";
-    });
-}
-
-// ✅ 8. Middleware
+// ✅ 6. Middleware
 app.UseMiddleware<LoggingMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 
-// ✅ 9. Controllers
+// ✅ 7. Controllers
 app.MapControllers();
 
-// ✅ 10. Migrate DB
+// ✅ 8. Migrate DB
 try
 {
     using var scope = app.Services.CreateScope();
