@@ -13,7 +13,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration
         .GetConnectionString("DefaultConnection")));
 
-// ✅ 2. DI-- to check
+// ✅ 2. DI-- to check--- check after commit
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
