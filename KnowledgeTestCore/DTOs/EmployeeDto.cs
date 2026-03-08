@@ -7,6 +7,7 @@
         //good to go
         //good to go
 
+        string MyProperty = "IT";
 
         public record CreateEmployeeRequest(
            string FirstName,
