@@ -6,6 +6,7 @@
         //good to go
         //good to go
         //good to go
+          string MyProperty ="HR";
 
 
         public record CreateEmployeeRequest(
