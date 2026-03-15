@@ -6,7 +6,8 @@
         //good to go
         //good to go
         //good to go
-          string MyProperty ="TestBranch1";
+          string MyProperty ="TestBranch2";
+        //  string MyProperty ="TestBranch1";
 
    
 
