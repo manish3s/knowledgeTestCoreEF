@@ -8,7 +8,6 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-Console.WriteLine("🔑 HASH: " + BCrypt.Net.BCrypt.HashPassword("admin123"));
 
 
 // ✅ 1. EF Core
@@ -19,6 +18,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // ✅ 2. DI-- to check--- check after commit
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
+builder.Services.AddScoped<IEmployeeReadService, EmployeeReadService>(); // added new read service from Dapper
 
 // ✅ 3. JWT
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
