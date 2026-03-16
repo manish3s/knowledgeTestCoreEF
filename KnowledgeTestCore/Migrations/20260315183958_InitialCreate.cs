@@ -49,7 +49,7 @@ namespace KnowledgeTestCore.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "PasswordHash", "Role", "Username" },
-                values: new object[] { 1, "$2a$11$N5E1n2KMSEh4gKHLkPEsNOlQGYBRBVWDnPMTFMoM1/zBgbKe7rNYi", "Admin", "admin" });
+                values: new object[] { 1, "$2a$11$C402WNPB89YHDRezXfTss.c46MsCTlBnnlZk9VFhxFS.gd.ZViFk6", "Admin", "admin" });
         }
 
         /// <inheritdoc />

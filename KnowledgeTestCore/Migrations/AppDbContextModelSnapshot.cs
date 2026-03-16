@@ -17,7 +17,7 @@ namespace KnowledgeTestCore.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.3")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -92,7 +92,7 @@ namespace KnowledgeTestCore.Migrations
                         new
                         {
                             Id = 1,
-                            PasswordHash = "$2a$11$N5E1n2KMSEh4gKHLkPEsNOlQGYBRBVWDnPMTFMoM1/zBgbKe7rNYi",
+                            PasswordHash = "$2a$11$C402WNPB89YHDRezXfTss.c46MsCTlBnnlZk9VFhxFS.gd.ZViFk6",
                             Role = "Admin",
                             Username = "admin"
                         });
