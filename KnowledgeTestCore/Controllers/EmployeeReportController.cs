@@ -28,7 +28,7 @@ namespace KnowledgeTestCore.Controllers
             return Ok(employees);
         }
 
-        // GET api/employeereport/search/john ok
+        // GET api/employeereport/search/john ok ok
         [HttpGet("search/{keyword}")]
         public async Task<IActionResult> Search(string keyword)
         {
