@@ -37,17 +37,11 @@ namespace KnowledgeTestCore.Services
 
         public async Task<AuthResponse?> RegisterAsync(RegisterRequest request)
         {
-            var exists = await _db.Users
-                .AnyAsync(u => u.Username == request.Username);
+            var exists = await _db.Users.AnyAsync(u => u.Username == request.Username);
 
             if (exists) return null;
 
-            var user = new User
-            {
-                Username = request.Username,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
-                Role = request.Role
-            };
+            var user = new User { Username=request.Username, PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password), Role = request.Role };
 
             _db.Users.Add(user);
             await _db.SaveChangesAsync();
