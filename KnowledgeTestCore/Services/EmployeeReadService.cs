@@ -24,7 +24,7 @@ namespace KnowledgeTestCore.Services
                 _config.GetConnectionString("DefaultConnection"));
         }
 
-        // ✅ 1. Get all employees FAST
+        // ✅ 1. Get all employees FAST By Manish
         public async Task<IEnumerable<Employee>> GetAllFastAsync()
         {
             _logger.LogInformation("📋 Dapper: Getting all employees");
