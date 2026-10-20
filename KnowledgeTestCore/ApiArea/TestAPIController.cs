@@ -22,6 +22,15 @@ namespace KnowledgeTestCore.ApiArea
             _logger = logger;
         }
 
+        // Added By Manish 
+        [HttpGet("Ping")]
+        public IActionResult Ping()
+        {
+            return Ok(new { message = "For Test", Data = DateTime.UtcNow });
+        }
+
+
+
         // Example: GET /api/testapi/fetch-external?url=https://api.github.com/
         [HttpGet("fetch-external")]
         public async Task<IActionResult> FetchExternal([FromQuery] string url)
