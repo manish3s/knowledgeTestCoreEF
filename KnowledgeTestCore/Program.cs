@@ -44,6 +44,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 // ✅ 4. Authorization
 builder.Services.AddAuthorization();
 
+// ✅ 4.5. HttpClient factory (register IHttpClientFactory for controllers)
+builder.Services.AddHttpClient();
+
 // ✅ 5. Controllers
 builder.Services.AddControllers();
 
